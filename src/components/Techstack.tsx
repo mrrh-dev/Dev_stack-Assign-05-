@@ -33,6 +33,7 @@ const Techstack = ({ fetchdata }: Promiseprops) => {
         <div className="col-span-1">
           <Chosestack
             /*  stack={stack} */
+
             count={count}
             setcount={setcount}
             selectedstack={selectedstack}

@@ -24,13 +24,29 @@ const Chosestack = ({
     //console.log(remainingtstack);
     setcount((count = count - 1));
   };
+  /* if (count === 0) {
+    return <h2 className="font-bold my-10 text-center">Your stack is empty</h2>;
+  } */
   return (
     <div>
       <div className="card container mx-auto  rounded-xl mt-6 bg-base-100 card-xl shadow-sm">
         <div className="card-body">
           <div>
             <h1 className="text-xl font-semibold">Your Stack</h1>
-            <p>{count} Technology Selected</p>
+            <p>
+              {count === 0
+                ? 'No technology selected yet'
+                : `${count} technology selected`}
+            </p>
+            <div>
+              {count === 0 ? (
+                <div className="bg-white my-10 flex items-center justify-center w-70 h-30 border-gray-200 border-2 border-dotted rounded-xl shadow-sm">
+                  Your stack is empty
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
           <div>
             {selectedstack.map((stack) => {
