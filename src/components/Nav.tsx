@@ -7,8 +7,8 @@ const Nav = () => {
         <img src="/src/assets/logo-text.png"></img>
       </div>
       <div>
-        <ul className="text-lg flex justify-between gap-6">
-          <li className="text-pink-500 ">Home</li>
+        <ul className="text-lg flex justify-between gap-6 text-gray-500 font-semibold">
+          <li className="text-pink-500">Home</li>
           <li>Technologies</li>
           <li>Projects</li>
           <li>About</li>

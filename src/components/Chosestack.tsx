@@ -4,32 +4,41 @@ import type { Stacktypes } from './types/Stacktypes';
 import { MdDeleteForever } from 'react-icons/md';
 export interface Chooseprops {
   //stack: Stacktypes[];
-  count: number;
-  setcount: Dispatch<SetStateAction<number>>;
+  //count: number;
+  //setcount: Dispatch<SetStateAction<number>>;
   selectedstack: Stacktypes[];
   setselectedstack: Dispatch<SetStateAction<Stacktypes[]>>;
+  //setadded: Dispatch<SetStateAction<boolean>>;
 }
 const Chosestack = ({
   //stack,
-  count,
-  setcount,
+  //count,
+  //setcount,
   selectedstack,
   setselectedstack,
+  //setadded,
 }: Chooseprops) => {
+  let count = selectedstack.length;
   const handleremove = (stack: Stacktypes) => {
     const remainingtstack = selectedstack.filter(
       (stak) => stak.name !== stack.name,
     );
     setselectedstack(remainingtstack);
+    //setselectedstack((prev) => prev.filter((stak) => stak.name !== stack.name));
     //console.log(remainingtstack);
-    setcount((count = count - 1));
+    //setcount((count = count - 1));
+    //setadded(false);
+  };
+  const handleremoveall = () => {
+    setselectedstack([]);
+    count = 0;
   };
   /* if (count === 0) {
     return <h2 className="font-bold my-10 text-center">Your stack is empty</h2>;
   } */
   return (
     <div>
-      <div className="card container mx-auto  rounded-xl mt-6 bg-base-100 card-xl shadow-sm">
+      <div className="card w-full rounded-xl mt-6 bg-base-100 card-xl shadow-sm">
         <div className="card-body">
           <div>
             <h1 className="text-xl font-semibold">Your Stack</h1>
@@ -40,7 +49,7 @@ const Chosestack = ({
             </p>
             <div>
               {count === 0 ? (
-                <div className="bg-white my-10 flex items-center justify-center w-70 h-30 border-gray-200 border-2 border-dotted rounded-xl shadow-sm">
+                <div className="bg-white my-10 flex items-center justify-center w-full h-30 border-gray-200 border-2 border-dotted rounded-xl shadow-sm">
                   Your stack is empty
                 </div>
               ) : (
@@ -52,7 +61,7 @@ const Chosestack = ({
             {selectedstack.map((stack) => {
               return (
                 <div className="mt-2">
-                  <div className="flex justify-between items-center border-2 border-gray-300 rounded-xl space-y-3 py-2 px-4">
+                  <div className="flex justify-between items-center border-2 border-gray-300 rounded-xl py-2 px-4">
                     <div className="flex justify-between items-center gap-4">
                       <div>
                         <img
@@ -69,29 +78,24 @@ const Chosestack = ({
                     <div>
                       <button
                         onClick={() => handleremove(stack)}
-                        className="w-16 h-12 rounded-xl bg-white hover:bg-gray-200 py-2 px-4 mb-4"
+                        className="w-16 h-12 rounded-xl bg-white hover:bg-gray-200 flex items-center justify-center"
                       >
                         <MdDeleteForever className="size-7" />
                       </button>
                     </div>
                   </div>
-                  {/* <div>
-                    <button className="w-80 h-10 rounded-xl bg-red-200 ">
-                      Remove All
-                    </button> 
-                  </div> */}
                 </div>
               );
             })}
           </div>
-          {/* <h2 className="card-title">Xlarge Card</h2>
-          <p>
-            A card component has a figure, a body part, and inside body there
-            are title and actions parts
-          </p>
-          <div className="justify-end card-actions">
-            <button className="btn btn-primary">Buy Now</button> 
-          </div> */}
+          {selectedstack.length > 0 && (
+            <button
+              onClick={handleremoveall}
+              className="mt-14 text-xl font-bold w-full h-10 rounded-xl border border-red-300 text-red-500 hover:bg-red-50"
+            >
+              Remove All
+            </button>
+          )}
         </div>
       </div>
     </div>

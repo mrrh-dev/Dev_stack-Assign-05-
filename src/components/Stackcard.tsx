@@ -1,67 +1,76 @@
 import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { Stacktypes } from './types/Stacktypes';
 import { toast } from 'react-toastify';
+import Chosestack from './Chosestack';
+//import Chosestack from './Chosestack';
 //import { RiReactjsFill } from 'react-icons/ri';
 export interface Stackprops {
   stack: Stacktypes;
-  count: number;
-  setcount: Dispatch<SetStateAction<number>>;
+  //count: number;
+  //setcount: Dispatch<SetStateAction<number>>;
   selectedstack: Stacktypes[];
   setselectedstack: Dispatch<SetStateAction<Stacktypes[]>>;
+  /* isadded: boolean;
+  setadded: Dispatch<SetStateAction<boolean>>; */
 }
 const Stackcard = ({
   stack,
-  count,
-  setcount,
+  //count,
+  /// setcount,
   selectedstack,
   setselectedstack,
+  /* isadded,
+  setadded, */
 }: Stackprops) => {
-  const [isadded, setadded] = useState<boolean>(false);
+  //const [isadded, setadded] = useState<boolean>(false);
+  const isadded = selectedstack.some((item) => item.name === stack.name);
   const handleadded = () => {
     if (isadded) toast.warn('Stack already added');
     else {
-      setadded(true);
-      setcount((count = count + 1));
+      //setadded(true);
+      //setcount((count = count + 1));
+      setselectedstack([...selectedstack, stack]);
+      //setselectedstack((prev) => [...prev, stack]);
+
       toast.success('Stack succesfully added');
     }
-    setselectedstack([...selectedstack, stack]);
+    //setselectedstack([...selectedstack, stack]);
   };
   return (
-    <div className="">
-      <div className="card rounded-xl w-100 h-80 mt-6 bg-base-100 card-xl shadow-sm">
+    <div className="w-full">
+      <div className="card rounded-xl w-full min-h-80 mt-6 bg-base-100 card-xl shadow-sm">
         <div className="card-body">
           <div className="flex justify-between">
             <div>
               <img src={stack.icon} alt="react img" className="w-10 h-10"></img>
             </div>
             <div>
-              <p className="">{stack.badge}</p>
+              <p className="text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-500">
+                {stack.badge}
+              </p>
             </div>
           </div>
           <h1 className="text-xl font-semibold">{stack.name}</h1>
           <p>{stack.description}</p>
           <div>
-            <ul className="flex justify-between">
-              <li>{stack.category}</li>
+            <ul className="flex justify-between mt-2 items-center">
+              <li className="text-lg bg-gray-100 text-gray-600 px-2 py-1 rounded-lg">
+                {stack.category}
+              </li>
               <li>{stack.difficulty}</li>
-              <li>{stack.rating}</li>
+              <li className="text-lg font-medium text-gray-700">
+                <span className="text-yellow-500 text-2xl">★</span>{' '}
+                {stack.rating}
+              </li>
             </ul>
           </div>
           <button
             /* disabled={isadded} */
             onClick={() => handleadded()}
-            className={`w-80 h-10 rounded-xl ${isadded ? 'bg-gray-600' : 'bg-gray-900'}  text-white`}
+            className={`mt-6 w-full h-10 rounded-xl ${isadded ? 'bg-gray-600' : 'bg-gray-900'}  text-white`}
           >
             {isadded ? 'Added' : 'Add to Stack'}
           </button>
-          {/* <h2 className="card-title"></h2>
-          <p>
-            A card component has a figure, a body part, and inside body there
-            are title and actions parts
-          </p>
-          <div className="justify-end card-actions">
-            <button className="btn btn-primary">Buy Now</button>
-          </div> */}
         </div>
       </div>
     </div>
