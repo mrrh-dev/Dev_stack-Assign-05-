@@ -8,6 +8,7 @@ export interface Promiseprops {
 const Techstack = ({ fetchdata }: Promiseprops) => {
   const stack = use(fetchdata);
   const [count, setcount] = useState(0);
+  const [selectedstack, setselectedstack] = useState<Stacktypes[]>([]);
   return (
     <div>
       <div className="container mx-auto">
@@ -23,12 +24,20 @@ const Techstack = ({ fetchdata }: Promiseprops) => {
                 stack={stack}
                 count={count}
                 setcount={setcount}
+                selectedstack={selectedstack}
+                setselectedstack={setselectedstack}
               ></Stackcard>
             );
           })}
         </div>
         <div className="col-span-1">
-          <Chosestack stack={stack} count={count}></Chosestack>
+          <Chosestack
+            /*  stack={stack} */
+            count={count}
+            setcount={setcount}
+            selectedstack={selectedstack}
+            setselectedstack={setselectedstack}
+          ></Chosestack>
         </div>
       </div>
       {/* <div className="grid grid-cols-3 container mx-auto">

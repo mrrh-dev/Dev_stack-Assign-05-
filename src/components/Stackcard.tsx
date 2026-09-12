@@ -6,8 +6,16 @@ export interface Stackprops {
   stack: Stacktypes;
   count: number;
   setcount: Dispatch<SetStateAction<number>>;
+  selectedstack: Stacktypes[];
+  setselectedstack: Dispatch<SetStateAction<Stacktypes[]>>;
 }
-const Stackcard = ({ stack, count, setcount }: Stackprops) => {
+const Stackcard = ({
+  stack,
+  count,
+  setcount,
+  selectedstack,
+  setselectedstack,
+}: Stackprops) => {
   const [isadded, setadded] = useState<boolean>(false);
   const handleadded = () => {
     if (isadded) toast.warn('Stack already added');
@@ -16,6 +24,7 @@ const Stackcard = ({ stack, count, setcount }: Stackprops) => {
       setcount((count = count + 1));
       toast.success('Stack succesfully added');
     }
+    setselectedstack([...selectedstack, stack]);
   };
   return (
     <div className="">
