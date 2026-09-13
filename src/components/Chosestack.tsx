@@ -2,6 +2,7 @@ import React, { type Dispatch, type SetStateAction } from 'react';
 import { RiReactjsFill } from 'react-icons/ri';
 import type { Stacktypes } from './types/Stacktypes';
 import { MdDeleteForever } from 'react-icons/md';
+import { toast } from 'react-toastify';
 export interface Chooseprops {
   //stack: Stacktypes[];
   //count: number;
@@ -24,6 +25,7 @@ const Chosestack = ({
       (stak) => stak.name !== stack.name,
     );
     setselectedstack(remainingtstack);
+    toast(`Remove ${stack.name} stack successfully`);
     //setselectedstack((prev) => prev.filter((stak) => stak.name !== stack.name));
     //console.log(remainingtstack);
     //setcount((count = count - 1));
@@ -32,6 +34,7 @@ const Chosestack = ({
   const handleremoveall = () => {
     setselectedstack([]);
     count = 0;
+    toast('Remove All Stack');
   };
   /* if (count === 0) {
     return <h2 className="font-bold my-10 text-center">Your stack is empty</h2>;

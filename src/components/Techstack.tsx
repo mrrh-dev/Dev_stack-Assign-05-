@@ -12,12 +12,14 @@ const Techstack = ({ fetchdata }: Promiseprops) => {
   //const [isadded, setadded] = useState<boolean>(false);
   return (
     <div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <h1 className="text-3xl font-bold">
-          Explore the <span className="text-pink-600">Technologies</span>
+          Explore the <br className="md:hidden" />
+          <span className="text-pink-600">Technologies</span>
         </h1>
-        <p className="text-gray-500">
-          Pick one tchnology per category to build your ideal stack
+        <p className="text-gray-500 mt-2 text-sm sm:text-base">
+          Pick one tchnology per category to build your{' '}
+          <br className="md:hidden" /> ideal stack
         </p>
       </div>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">

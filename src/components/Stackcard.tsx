@@ -36,6 +36,14 @@ const Stackcard = ({
     }
     //setselectedstack([...selectedstack, stack]);
   };
+  const badgecolor = (badge: string) => {
+    if (badge === 'Popular') return 'bg-green-50 text-green-500';
+    if (badge === 'Versatile') return 'bg-green-50 text-green-500';
+    if (badge === 'Fast') return 'bg-green-50 text-green-500';
+    if (badge === 'Cache') return 'bg-red-50 text-red-500';
+
+    return 'bg-cyan-50 text-cyan-500';
+  };
   return (
     <div className="w-full">
       <div className="card rounded-xl w-full min-h-80 mt-6 bg-base-100 card-xl shadow-sm">
@@ -45,7 +53,9 @@ const Stackcard = ({
               <img src={stack.icon} alt="react img" className="w-10 h-10"></img>
             </div>
             <div>
-              <p className="text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-500">
+              <p
+                className={`text-xs font-medium px-3 py-1 rounded-full ${badgecolor(stack.badge)}`}
+              >
                 {stack.badge}
               </p>
             </div>
