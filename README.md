@@ -1,32 +1,67 @@
-# React + TypeScript + Vite
+# 🚀 Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Dev Stack is a responsive web application that helps developers explore different technologies and create their own development stack. Users can add or remove technologies from their personal stack.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React.js
+- TypeScript
+- Tailwind CSS
+- Vite
+- React Toastify
+- DaisyUI
+- JSON
+- HTML5
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Explore Technologies
 
-## Expanding the Oxlint configuration
+Users can explore different frontend, backend, database, styling, language, and DevOps technologies.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### 2. Build Your Own Stack
 
-```json
+Users can add technologies to their personal stack and remove them whenever they want.
+
+### 3. Responsive Design
+
+The website is fully responsive and works smoothly on desktop, tablet, and mobile devices.
+
+## 💡 React Concept Q&A
+
+### 1. What is JSX, and why is it used in React?
+
+**JSX** stands for JavaScript XML. It allows you to write HTML-like code directly inside your JavaScript file.This allows Javascript developers uses their natural stack .
+
+### 2. What is the difference between props and state?
+
+- **Props** (properties) are read-only data passed down from a parent component to a child component. The child cannot change them.It likes JS argument i mean an object
+
+- **State** is local, mutable data managed directly within the component itself. When state changes, the component re-renders to reflect the update.
+
+### 3. What does the useState hook do, and where did you use it in this project?
+
+The `useState` hook allows you to add state variables to a functional component so React can track data changes. In this project, it is used to hold the array of items loaded from the JSON file and to keep track of current user selections.
+
+### 4. What does the useEffect hook do, and why did you need it to load the JSON data?
+
+The `useEffect` hook lets you run side effects—like fetching data—after the component renders. It was needed to fetch the external JSON data exactly once when the application first loads into the browser, preventing infinite loops.
+
+### 5. Why does every item in a .map() list need a unique key prop?
+
+React uses the unique `key` prop to identify exactly which items have changed, been added, or been removed. This helps React update only the specific changed element in the UI instead of re-rendering the entire list, ensuring high performance.
+
+### 6. What is conditional rendering? Show one place you used it.
+
+Conditional rendering means showing or hiding UI elements based on a specific condition. For example, it is used to display an empty stack message when there are no items left:
+
+```jsx
 {
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
+  items.length === 0 ? <p>No items available!</p> : <ItemList />;
 }
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back?
+
+- **Parent to Child:** The parent passes data downward using **props** attributes on the child tag.
+- **Child to Parent:** The parent passes a **callback function** as a prop to the child. The child then executes that function and passes data back up as an argument.
