@@ -1,5 +1,5 @@
-import React from 'react';
-
+//import React from 'react';
+import Banner_img from '../assets/banner-stack.png';
 const Banner = () => {
   return (
     <div className="container mx-auto px-4 py-10 md:py-16">
@@ -7,7 +7,7 @@ const Banner = () => {
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Build Your Ideal <br></br>
-            <span className=" tracking-tight bg-gradient-to-r from-orange-500 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <span className=" tracking-tight bg-linear-to-r from-orange-500 via-pink-600 to-purple-600 bg-clip-text text-transparent">
               Development Stack
             </span>
           </h1>
@@ -17,7 +17,7 @@ const Banner = () => {
             project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-8">
-            <button className="px-6 py-3 text-sm font-semibold text-white rounded-2xl bg-gradient-to-r from-orange-500 to-pink-600 transition-opacity hover:opacity-95 shadow-sm">
+            <button className="px-6 py-3 text-sm font-semibold text-white rounded-2xl bg-linear-to-r from-orange-500 to-pink-600 transition-opacity hover:opacity-95 shadow-sm">
               Explore Technologies
             </button>
             <button className="px-8 py-2 bg-white border-2 rounded-2xl border-gray-100 text-gray-500 text-base hover:bg-gray-200 transition">
@@ -27,7 +27,7 @@ const Banner = () => {
         </div>
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="/src/assets/banner-stack.png"
+            src={Banner_img}
             alt="banner img"
             className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto"
           ></img>

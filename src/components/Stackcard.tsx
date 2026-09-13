@@ -1,7 +1,7 @@
-import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { Stacktypes } from './types/Stacktypes';
 import { toast } from 'react-toastify';
-import Chosestack from './Chosestack';
+//import Chosestack from './Chosestack';
 //import Chosestack from './Chosestack';
 //import { RiReactjsFill } from 'react-icons/ri';
 export interface Stackprops {

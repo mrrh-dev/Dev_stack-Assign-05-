@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
+import Logo from '../assets/logo-text.png';
 const Nav = () => {
   const [ismenuopen, setismenuopen] = useState(false);
   return (
@@ -7,11 +7,7 @@ const Nav = () => {
       <div className="container mx-auto px-4 py-4 md:py-5">
         <div className="flex justify-between items-center">
           <div>
-            <img
-              src="/src/assets/logo-text.png"
-              alt="logo img"
-              className="w-32 md:w-40"
-            ></img>
+            <img src={Logo} alt="logo img" className="w-32 md:w-40"></img>
           </div>
 
           <div className="hidden md:block">

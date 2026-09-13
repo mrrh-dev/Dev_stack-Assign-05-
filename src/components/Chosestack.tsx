@@ -1,5 +1,5 @@
-import React, { type Dispatch, type SetStateAction } from 'react';
-import { RiReactjsFill } from 'react-icons/ri';
+import { type Dispatch, type SetStateAction } from 'react';
+//import { RiReactjsFill } from 'react-icons/ri';
 import type { Stacktypes } from './types/Stacktypes';
 import { MdDeleteForever } from 'react-icons/md';
 import { toast } from 'react-toastify';
