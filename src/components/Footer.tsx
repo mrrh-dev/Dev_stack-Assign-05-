@@ -12,16 +12,13 @@ const Footer = () => {
               Curated tools, technologies, and resources for developers building
               modern software.
             </p>
-
             <div className="mt-5 flex gap-5">
               <p className="text-sm font-medium text-gray-600 transition ">
                 GitHub
               </p>
-
               <p className="text-sm font-medium text-gray-600 transition ">
                 Twitter
               </p>
-
               <p className="text-sm font-medium text-gray-600 transition ">
                 LinkedIn
               </p>
@@ -35,9 +32,7 @@ const Footer = () => {
 
             <div className="mt-4 space-y-3">
               <p className="block text-sm text-gray-500 ">Home</p>
-
               <p className="block text-sm text-gray-500 ">Technologies</p>
-
               <p className="block text-sm text-gray-500 ">Projects</p>
             </div>
           </div>
@@ -60,7 +55,6 @@ const Footer = () => {
 
           <div className="flex gap-6">
             <p>Privacy</p>
-
             <p>Terms</p>
           </div>
         </div>
