@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# Project Name
 
 Dev Stack is a responsive web application that helps developers explore different technologies and create their own development stack. Users can add or remove technologies from their personal stack.
 
@@ -27,7 +27,7 @@ Users can add technologies to their personal stack and remove them whenever they
 
 The website is fully responsive and works smoothly on desktop, tablet, and mobile devices.
 
-## 💡 React Concept Q&A
+## React Concept Q&A
 
 ### 1. What is JSX, and why is it used in React?
 
