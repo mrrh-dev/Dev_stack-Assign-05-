@@ -12,7 +12,7 @@ const Techstack = ({ fetchdata }: Promiseprops) => {
   //const [isadded, setadded] = useState<boolean>(false);
   return (
     <div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 lg:-mt-20">
         <h1 className="text-3xl font-bold">
           Explore the <br className="md:hidden" />
           <span className="text-pink-600">Technologies</span>
@@ -48,11 +48,6 @@ const Techstack = ({ fetchdata }: Promiseprops) => {
           ></Chosestack>
         </div>
       </div>
-      {/* <div className="grid grid-cols-3 container mx-auto">
-        {stack.map((stack: Stacktypes, ind: number) => {
-          return <Stackcard key={ind} stack={stack}></Stackcard>;
-        })}
-      </div> */}
     </div>
   );
 };

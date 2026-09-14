@@ -2,9 +2,9 @@
 import logo from '../assets/logo-text.png';
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-100 bg-white">
+    <footer className="border-t border-gray-100 bg-white mt-12">
       <div className="container mx-auto px-4 py-10 md:py-12">
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
             <img src={logo} alt="Dev Stack" className="h-8 w-auto" />
 
@@ -48,15 +48,26 @@ const Footer = () => {
               <p className="block text-sm text-gray-500 ">Careers</p>
             </div>
           </div>
+
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wide ">
+              Legal
+            </h3>
+
+            <div className="mt-4 space-y-3">
+              <p className="block text-sm text-gray-500 ">Privacy Policy</p>
+              <p className="block text-sm text-gray-500 ">Terms of Service</p>
+            </div>
+          </div>
         </div>
 
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-gray-100 pt-6 text-sm text-gray-400 md:flex-row">
           <p>© 2026 Dev Stack. All rights reserved.</p>
 
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <p>Privacy</p>
             <p>Terms</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

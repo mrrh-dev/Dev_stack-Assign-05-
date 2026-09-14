@@ -1,4 +1,4 @@
-# Project Name
+# Dev Stack
 
 Dev Stack is a responsive web application that helps developers explore different technologies and create their own development stack. Users can add or remove technologies from their personal stack.
 
@@ -31,13 +31,13 @@ The website is fully responsive and works smoothly on desktop, tablet, and mobil
 
 ### 1. What is JSX, and why is it used in React?
 
-**JSX** stands for JavaScript XML. It allows you to write HTML-like code directly inside your JavaScript file.This allows Javascript developers uses their natural stack .
+**JSX** stands for JavaScript XML. It allows you to write HTML-like code directly inside your JavaScript file.This allows Javascript developers uses their own stack .
 
 ### 2. What is the difference between props and state?
 
-- **Props** (properties) are read-only data passed down from a parent component to a child component. The child cannot change them.It likes JS argument i mean an object
+- **Props** (properties) are read-only data passed down from a parent component to a child component. The child cannot change them.It likes JS argument which is an object
 
-- **State** is local, mutable data managed directly within the component itself. When state changes, the component re-renders to reflect the update.
+- **State** is local, mutable data managed directly within the component itself. When state changes, the component re-renders to reflect the update.We can call it memory of React component
 
 ### 3. What does the useState hook do, and where did you use it in this project?
 
@@ -53,11 +53,11 @@ React uses the unique `key` prop to identify exactly which items have changed, b
 
 ### 6. What is conditional rendering? Show one place you used it.
 
-Conditional rendering means showing or hiding UI elements based on a specific condition. For example, it is used to display an empty stack message when there are no items left:
+Conditional rendering means showing or hiding UI elements based on a specific condition. For example, it is used to display Add to Stack when isadded is false and display Added when isadded is true:
 
 ```jsx
 {
-  items.length === 0 ? <p>No items available!</p> : <ItemList />;
+  isadded ? 'Added' : 'Add to Stack';
 }
 ```
 

@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="container mx-auto px-4 py-10 md:py-16">
       <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6">
-        <div className="w-full md:w-1/2 text-center md:text-left">
+        <div className="w-full md:w-1/2 text-center md:text-left lg:-mt-30">
           <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Build Your Ideal <br></br>
             <span className=" tracking-tight bg-linear-to-r from-orange-500 via-pink-600 to-purple-600 bg-clip-text text-transparent">
@@ -25,7 +25,7 @@ const Banner = () => {
             </button>
           </div>
         </div>
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center -mt-10">
           <img
             src={Banner_img}
             alt="banner img"
